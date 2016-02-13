@@ -2,30 +2,110 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!-- Begin Carousel-->
+<div id="highlighted">
+    <div class="inner">
+        <div class="container">
+            <!-- Carousel - May use standard Bootstrap markup within slides - For best results use images all the same size (in this example they are 600px x 400px) -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="carousel-front" class="carousel slide carousel-featured">
+                        <div class="carousel-inner">
+                            <!--Slide 1-->
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-6 pull-center animated fadeInUpBig">
+                                        <img src="~/Content/theme/Enkel/img/slides/recipe.png" alt="Full responsive slide image" />
+                                    </div>
+                                    <div class="col-sm-6 animated fadeInDownBig">
+                                        <h3 class="margin-top-large">
+                                            Manage recipes online!
+                                        </h3>
+                                        <p class="lead">Create, edit, and organize your recipes.</p>
+                                        <p><a href="#" class="btn btn-lg btn-success">Log in</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Slide 2-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-7 pull-center animated fadeInUpBig">
+                                        <img src="~/Content/theme/Enkel/img/slides/chow_mein.jpg" alt="">
+                                    </div>
+                                    <div class="col-sm-5 animated fadeInDownBig">
+                                        <h3 class="margin-top-medium">
+                                            Easy to use
+                                        </h3>
+                                        <h4>
+                                            <i class="glyphicon glyphicon-ok"></i> User Friendly
+                                        </h4>
+                                        <h4>
+                                            <i class="glyphicon glyphicon-ok"></i> Secure storage
+                                        </h4>
+                                        <h4>
+                                            <i class="glyphicon glyphicon-ok"></i> Great support
+                                        </h4>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Slide 3-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-6 pull-center animated fadeInDownBig">
+                                        <img src="~/Content/theme/Enkel/img/slides/Shopping-List.png" alt="">
+                                    </div>
+                                    <div class="col-sm-5 animated fadeInUpBig">
+                                        <h3 class="margin-top-medium">
+                                            Create a shopping list!
+                                        </h3>
+                                        <p class="lead">Easily make shopping list from recipes. Use right on your smartphone.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left carousel-control carousel-control-rounded carousel-control-small" href="#carousel-front" data-slide="prev">‹</a> <a class="right carousel-control carousel-control-rounded carousel-control-small" href="#carousel-front" data-slide="next">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</div>
+<!-- End Carousel -->
+<div id="content">
+    <div class="container">
+        <!-- Mission statement -->
+        <div class="mission">
+            <div class="inner">
+                <h3>
+                    An Online Storage <span>to organize all </span> your recipes!
+                </h3>
+            </div>
+        </div>
+        <!-- Services -->
+        <div class="block services margin-top-large">
+            <ul class="thumbnails row">
+                <li class="col-sm-4">
+                    <h3 class="title">
+                        <i class="glyphicon glyphicon-user icon-small icon-inverse-80 _icon-circle"></i> Register</a>
+                    </h3>
+                    <p>Register now for a free account. Up to 150 recipes stored at no charge. Unlimited storage only $25.00 a year.</p>
+                    @Html.ActionLink("Register", "Register", "Account",  new { @class="btn btn-md btn-success" })
+                </li>
+                <li class="col-sm-4">
+                    <h3 class="title">
+                        <i class="glyphicon glyphicon-search icon-small icon-inverse-80 _icon-circle"></i> Search</a>
+                    </h3>
+                    <p>Search for and organize your favorite recipes safely and secure.</p>
+                </li>
+                <li class="col-sm-4">
+                    <h3 class="title">
+                        <i class="glyphicon glyphicon-phone icon-small icon-inverse-80 _icon-circle"></i> Design</a>
+                    </h3>
+                    <p>This site is designed to work on all devices. From desktops to tablets and even your smartphone. Access your recipes from anywhere.</p>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
