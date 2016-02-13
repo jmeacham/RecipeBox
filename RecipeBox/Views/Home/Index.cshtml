@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-}
+ }
 
 <!-- Begin Carousel-->
 <div id="highlighted">
@@ -91,7 +91,7 @@
                         <i class="glyphicon glyphicon-user icon-small icon-inverse-80 _icon-circle"></i> Register</a>
                     </h3>
                     <p>Register now for a free account. Up to 150 recipes stored at no charge. Unlimited storage only $25.00 a year.</p>
-                    @Html.ActionLink("Register", "Register", "Account",  new { @class="btn btn-md btn-success" })
+                    <p><a href="@Url.Action("Register", "Account")" class="btn btn-md btn-success">Register</a></p>
                 </li>
                 <li class="col-sm-4">
                     <h3 class="title">
