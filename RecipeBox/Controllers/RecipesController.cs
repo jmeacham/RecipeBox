@@ -12,6 +12,7 @@ using System.IO;
 
 namespace RecipeBox.Controllers
 {
+    [Authorize]
     public class RecipesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

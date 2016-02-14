@@ -10,13 +10,22 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
-    <h3>@Html.DisplayFor(model => model.Title)</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>@Html.DisplayFor(model => model.Title)</h2>
 
-    @if (Model.Files.Any(f => f.FileType == RecipeBox.Models.FileType.Image))
-    {
-        <img class="img-responsive recipe-img" src="~/File?id=@Model.Files.First(f => f.FileType == RecipeBox.Models.FileType.Image).FileId" alt="Recipe photo" />
+            @if (Model.Files.Any(f => f.FileType == RecipeBox.Models.FileType.Image))
+            {
+                <img class="img-responsive recipe-img" src="~/File?id=@Model.Files.First(f => f.FileType == RecipeBox.Models.FileType.Image).FileId" alt="Recipe photo" />
 
-    }
+            }
+        </div>
+        <div class="col-md-6">
+            <br />
+            <h4>Create a shopping list for ingredients</h4>
+            <p><a href="#" class="btn btn-md btn-success">Create List</a></p>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <h3>Ingredients</h3>
