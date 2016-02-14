@@ -29,5 +29,9 @@ namespace RecipeBox.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<RecipeBox.Models.Recipe> Recipes { get; set; }
+
+        public DbSet<File> Files { get; set; }
     }
 }
