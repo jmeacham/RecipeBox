@@ -9,8 +9,7 @@ namespace RecipeBox.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "RecipeBox.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(RecipeBox.Models.ApplicationDbContext context)

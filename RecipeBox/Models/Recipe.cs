@@ -17,6 +17,11 @@ namespace RecipeBox.Models
         [DataType(DataType.MultilineText)]
         public string Directions { get; set; }
 
+        public virtual ApplicationUser User { get; set; }
+
+        [Required]
+        public string ApplicationUserId { get; set; }
+
         public virtual ICollection<File> Files { get; set; }
 
     }

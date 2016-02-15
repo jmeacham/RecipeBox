@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using RecipeBox.Models;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace RecipeBox.Controllers
 {
@@ -26,13 +27,17 @@ namespace RecipeBox.Controllers
         // GET: Recipes/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+            
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
-            //Recipe recipe = await db.Recipes.FindAsync(id);
-            Recipe recipe = await db.Recipes.Include(s => s.Files).SingleOrDefaultAsync(s => s.Id == id);
+            var userId = User.Identity.GetUserId();
+            Recipe recipe = await db.Recipes.Where(r => r.ApplicationUserId == userId)
+                                            .Include(s => s.Files)                                            
+                                            .SingleOrDefaultAsync(s => s.Id == id);
+                
             if (recipe == null)
             {
                 return HttpNotFound();
