@@ -13,15 +13,20 @@ using Microsoft.AspNet.Identity;
 
 namespace RecipeBox.Controllers
 {
+    
     [Authorize]
     public class RecipesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        
+        
         // GET: Recipes
         public async Task<ActionResult> Index()
         {
-            return View(await db.Recipes.ToListAsync());
+            var userId = User.Identity.GetUserId();
+            
+            return View(await db.Recipes.Where(r => r.ApplicationUserId == userId)
+                .ToListAsync());
         }
 
         // GET: Recipes/Details/5
@@ -56,8 +61,10 @@ namespace RecipeBox.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Ingredients,Directions")] Recipe recipe, HttpPostedFileBase upload)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Ingredients,Directions,ApplicationUserId")] Recipe recipe, HttpPostedFileBase upload)
         {
+            recipe.ApplicationUserId = User.Identity.GetUserId();
+
             if (ModelState.IsValid)
             {
                 if (upload != null && upload.ContentLength > 0)

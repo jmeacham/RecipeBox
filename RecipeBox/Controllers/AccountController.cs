@@ -156,6 +156,8 @@ namespace RecipeBox.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var db = new ApplicationDbContext();
+                    
                     UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.FirstName));
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
