@@ -18,8 +18,7 @@ namespace RecipeBox.Models
         public string Directions { get; set; }
 
         public virtual ApplicationUser User { get; set; }
-
-        [Required]
+                
         public string ApplicationUserId { get; set; }
 
         public virtual ICollection<File> Files { get; set; }

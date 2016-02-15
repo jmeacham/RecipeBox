@@ -35,8 +35,8 @@ namespace RecipeBox.Controllers
             }
             var userId = User.Identity.GetUserId();
             Recipe recipe = await db.Recipes.Where(r => r.ApplicationUserId == userId)
-                                            .Include(s => s.Files)                                            
-                                            .SingleOrDefaultAsync(s => s.Id == id);
+                                            .Include(r => r.Files)                                            
+                                            .SingleOrDefaultAsync(r => r.Id == id);
                 
             if (recipe == null)
             {
