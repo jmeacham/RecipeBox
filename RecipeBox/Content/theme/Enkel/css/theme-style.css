@@ -530,9 +530,7 @@ body {
 .page-title small {
   color: rgba(51, 51, 51, 0.5);
 }
-.inner {
-  background: url(../img/bg_noise-5.png) left top repeat;
-}
+
 /* --------------------------------------------------
  * Zones & Regions
  *-------------------------------------------------- */
@@ -629,7 +627,7 @@ body {
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   border-bottom: 1px solid #e1e1e1;
-  background: #f2f2f2 url(img/bg_noise-5.png) left top repeat;
+  background: #f2f2f2;
   color: #377ca8;
   text-shadow: 1px 1px 1px #ffffff;
 }

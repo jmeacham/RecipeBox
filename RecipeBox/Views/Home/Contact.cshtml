@@ -8,18 +8,19 @@
     <div class="container">
         <div class="block">
             <div class="row">
-                <div class="col-sm-6">
-                    <form id="contact-form" action="#">
+                <div class="col-sm-6" id="form-section">
+                    <h3>@ViewBag.ContactMessage</h3>
+                    <form method="post" id="contact-form" >
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Name" id="name">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" placeholder="Email" id="email">
                         </div>
                         <div class="form-group">
-                            <textarea rows="15" class="form-control" placeholder="Message"></textarea>
+                            <textarea rows="15" class="form-control" placeholder="Message" id="message"></textarea>
                         </div>
-                        <input type="button" class="btn btn-primary" value="Send Message">
+                        <input type="submit" class="btn btn-primary" value="Send Message">
                     </form>
                 </div>
                 <div class="col-sm-6">
@@ -32,3 +33,8 @@
         </div>
     </div>
 </div>
+
+@section scripts 
+{
+  <script type="text/javascript" src="~/Content/js/ContactForm.js"></script>
+}

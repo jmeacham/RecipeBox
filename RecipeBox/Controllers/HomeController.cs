@@ -26,5 +26,13 @@ namespace RecipeBox.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            ViewBag.ContactMessage = "Thanks, we got your message!";
+
+            return PartialView("_ContactMessage");
+        }
     }
 }
