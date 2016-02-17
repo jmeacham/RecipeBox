@@ -1,6 +1,9 @@
-﻿using System;
+﻿using RecipeBox.Services;
+using RecipeBox.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,7 +18,7 @@ namespace RecipeBox.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "A place to create and store your recipes.";
 
             return View();
         }
@@ -28,8 +31,9 @@ namespace RecipeBox.Controllers
         }
 
         [HttpPost]
-        public ActionResult Contact(string message)
+        public ActionResult Contact(ContactViewModel model, string message)
         {
+            
             ViewBag.ContactMessage = "Thanks, we got your message!";
 
             return PartialView("_ContactMessage");
