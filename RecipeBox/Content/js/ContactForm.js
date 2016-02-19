@@ -6,6 +6,7 @@
         $.post('', {
             name: $('#name').val(),
             email: $('#email').val(),
+            subject: $('#subject').val(),
             message: $('#message').val()
         })
                 .done(function (response) {

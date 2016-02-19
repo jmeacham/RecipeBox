@@ -520,8 +520,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
-    <Folder Include="Services\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
