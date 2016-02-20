@@ -21,11 +21,12 @@ namespace RecipeBox.Controllers
         
         
         // GET: Recipes
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string search)
         {
             var userId = User.Identity.GetUserId();
-            
+                       
             return View(await db.Recipes.Where(r => r.ApplicationUserId == userId)
+                .OrderBy(r => r.Title)
                 .ToListAsync());
         }
 
@@ -110,8 +111,9 @@ namespace RecipeBox.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Ingredients,Directions")] Recipe recipe)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Ingredients,Directions,ApplicationUserId")] Recipe recipe)
         {
+            recipe.ApplicationUserId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Entry(recipe).State = EntityState.Modified;
