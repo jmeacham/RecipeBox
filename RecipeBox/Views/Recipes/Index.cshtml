@@ -8,20 +8,14 @@
 <p>
     <a href="@Url.Action("Create", "Recipes")" class="btn btn-md btn-success">Create Recipe</a>
 </p>
-<h3>My Recipes</h3>
+
 <table class="table">
     
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+       <td>
+            <a href="@Url.Action("Details", "Recipes", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a>
+       </td>
     </tr>
 }
 

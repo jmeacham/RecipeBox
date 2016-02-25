@@ -24,3 +24,7 @@ html > /**/ body .overflow-hidden {
     height: 250px;
     width: 275px;
 }
+.table th, .table td { 
+     border-top: none !important;
+     font-size: 1.75rem; 
+ }
