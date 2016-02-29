@@ -24,7 +24,7 @@
         <div class="col-md-6">
             <br />
             <h4>Create a shopping list for ingredients</h4>
-            <p><a href="#" class="btn btn-md btn-success">Create List</a></p>
+            <p><a href="@Url.Action("Index","ShoppingList", new { id = Model.Id })" class="btn btn-md btn-success">Create List</a></p>
         </div>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
                 <li>
                     @Html.DisplayFor(model => model.Ingredients)
                 </li>
-            </ul>
+            </ul> 
         </div>
         <div class="col-md-6">
             <h3>Directions</h3>

@@ -1,0 +1,18 @@
+﻿@model RecipeBox.Models.Recipe
+@{
+    ViewBag.Title = "Shopping List";
+    Layout = "~/Views/Shared/_LayoutPartial.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>@Html.DisplayFor(model => model.Title)</h3>
+        <ul class="multiline no-decoration">
+            <li>
+                @Html.DisplayFor(model => model.Ingredients)
+            </li>
+        </ul>
+        <p><a href="@Url.Action("Index","Recipes")" class="btn btn-md btn-success">Back to Recipes</a> | <a href="#" class="btn btn-md btn-success">Print</a></p>
+       
+    </div>
+</div>
