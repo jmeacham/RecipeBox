@@ -10,6 +10,7 @@ namespace RecipeBox.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(RecipeBox.Models.ApplicationDbContext context)

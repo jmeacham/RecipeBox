@@ -36,28 +36,7 @@ namespace RecipeBox.Controllers
         [HttpPost]
         public ActionResult Contact(ContactViewModel model, string message)
         {
-            
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    MailMessage msg = new MailMessage();
-                    msg.To.Add("meach529@yahoo.com");
-                    msg.From = new MailAddress(model.Email);
-                    msg.Subject = model.Subject;
-                    msg.Body = model.Message;
-                    SmtpClient client = new SmtpClient();
-                    client.Host = "smtp.mail.yahoo.com";
-                    client.Port = 465;
-                    client.EnableSsl = true;
-                    client.Send(msg);
-                }
-                catch (Exception)
-                {
-                    return View("Error");
-                }
-
-             }
+                   
             ViewBag.ContactMessage = "Thanks, we got your message!";
             return PartialView("_ContactMessage"); 
         }
