@@ -20,6 +20,10 @@
                 <img class="img-responsive recipe-img" src="~/File?id=@Model.Files.First(f => f.FileType == RecipeBox.Models.FileType.Image).FileId" alt="Recipe photo" />
 
             }
+            else
+            {
+                <img class="img-responsive recipe-img" src="~/Content/theme/Enkel/img/img_placeholder.png" />
+            }
         </div>
         <div class="col-md-6">
             <br />

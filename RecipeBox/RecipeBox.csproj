@@ -329,6 +329,7 @@
     <Content Include="Content\theme\Enkel\img\bg_noise-5.png" />
     <Content Include="Content\theme\Enkel\img\glyphicons-halflings-white.png" />
     <Content Include="Content\theme\Enkel\img\glyphicons-halflings.png" />
+    <Content Include="Content\theme\Enkel\img\img_placeholder.png" />
     <Content Include="Content\theme\Enkel\img\slides\chow_mein.jpg" />
     <Content Include="Content\theme\Enkel\img\slides\recipe.png" />
     <Content Include="Content\theme\Enkel\img\slides\Shopping-List.png" />
