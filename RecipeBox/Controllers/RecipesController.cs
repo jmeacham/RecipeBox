@@ -14,20 +14,22 @@ using Microsoft.AspNet.Identity;
 namespace RecipeBox.Controllers
 {
     
-    [Authorize]
+   // [Authorize]
     public class RecipesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         
         
         // GET: Recipes
-        public async Task<ActionResult> Index(string search)
+        public async Task<ActionResult> Index(int? id)
         {
             var userId = User.Identity.GetUserId();
-                       
+
             return View(await db.Recipes.Where(r => r.ApplicationUserId == userId)
+                .Include(r => r.Files)
                 .OrderBy(r => r.Title)
                 .ToListAsync());
+                
         }
 
         // GET: Recipes/Details/5

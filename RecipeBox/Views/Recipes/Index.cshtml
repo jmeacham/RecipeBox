@@ -9,12 +9,14 @@
     <a href="@Url.Action("Create", "Recipes")" class="btn btn-md btn-success">Create Recipe</a>
 </p>
 
-<table class="table">
+<table class="table table-condensed">
 <caption>Here are your recipes in alphabetized order. Click on a name to view the recipe.</caption>
     
 @foreach (var item in Model) {
     <tr>
-       <td>
+        <td class="col-md-1">
+            <img class="img-responsive thumbnail" src="~/Content/theme/Enkel/img/img_placeholder.png" />
+        <td class="">
             <a href="@Url.Action("Details", "Recipes", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a>
        </td>
     </tr>

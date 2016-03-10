@@ -24,8 +24,18 @@ html > /**/ body .overflow-hidden {
     height: 250px;
     width: 275px;
 }
+.table-condensed {
+    padding: 1px;
+}
 .table th, .table td { 
      border-top: none !important;
      font-size: 1.75rem; 
  }
-
+.thumbnail {
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+.vertical-center {
+    vertical-align: middle !important;
+}
