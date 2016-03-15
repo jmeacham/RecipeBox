@@ -15,7 +15,14 @@
 @foreach (var item in Model) {
     <tr>
         <td class="col-md-1">
-            <img class="img-responsive thumbnail" src="~/Content/theme/Enkel/img/img_placeholder.png" />
+            @if (@item.Files.Any(f => f.FileType == RecipeBox.Models.FileType.Image))
+            {
+                <img class="img-responsive thumbnail" src="~/File?id=@item.Files.First(f => f.FileType == RecipeBox.Models.FileType.Image).FileId" alt="Recipe photo" />
+            }
+            else
+            {
+                <img class="img-responsive thumbnail" src="~/Content/theme/Enkel/img/img_placeholder.png" />
+            }
         <td class="">
             <a href="@Url.Action("Details", "Recipes", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a>
        </td>

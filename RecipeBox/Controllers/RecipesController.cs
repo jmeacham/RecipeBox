@@ -14,7 +14,7 @@ using Microsoft.AspNet.Identity;
 namespace RecipeBox.Controllers
 {
     
-   // [Authorize]
+    [Authorize]
     public class RecipesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
